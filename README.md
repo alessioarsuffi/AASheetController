@@ -22,7 +22,7 @@ pod "AASheetController"
 
 ## Author
 
-Alessio Arsuffi, arsuffi@monksoftware.it
+Alessio Arsuffi, alessio.arsuffi@gmail.com
 
 ## License
 
