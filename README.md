@@ -1,6 +1,6 @@
 # AASheetController
 
-[![CI Status](http://img.shields.io/travis/Alessio Arsuffi/AASheetController.svg?style=flat)](https://travis-ci.org/Alessio Arsuffi/AASheetController)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/AASheetController.svg?style=flat)](http://cocoapods.org/pods/AASheetController)
 [![Version](https://img.shields.io/cocoapods/v/AASheetController.svg?style=flat)](http://cocoapods.org/pods/AASheetController)
 [![License](https://img.shields.io/cocoapods/l/AASheetController.svg?style=flat)](http://cocoapods.org/pods/AASheetController)
 [![Platform](https://img.shields.io/cocoapods/p/AASheetController.svg?style=flat)](http://cocoapods.org/pods/AASheetController)
