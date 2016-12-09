@@ -109,6 +109,7 @@ public class AASheetController: UIViewController {
     }
     
     //MARK: - Initialiser
+    
     @objc public convenience init(barButtonItem: UIBarButtonItem?) {
         self.init()
         let nib = loadNibAlertController()
@@ -119,9 +120,9 @@ public class AASheetController: UIViewController {
         modalPresentationStyle = .overCurrentContext
         modalTransitionStyle = .crossDissolve
         
-        if let popover = popoverPresentationController, barButtonItem != nil {
-            popover.barButtonItem = barButtonItem
+        if UIDevice.current.userInterfaceIdiom == .pad, barButtonItem != nil {
             modalPresentationStyle = .popover
+            popoverPresentationController?.barButtonItem = barButtonItem
         }
         
         shouldShowCancelButton()
