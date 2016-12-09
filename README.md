@@ -7,7 +7,8 @@
 
 ## Screenshot
 
-![Screenshot0][gif] &nbsp;&nbsp;
+![Screenshot0][gif] &nbsp;&nbsp; ![Screenshot1][img0]
+![Screenshot2][img1] &nbsp;&nbsp; ![Screenshot3][img2]
 
 ## Example
 
@@ -80,3 +81,6 @@ AASheetController is available under the MIT license. See the LICENSE file for m
 
 
 [gif]: http://i.giphy.com/jWelDzjTHmEVO.gif
+[img0]: http://i66.tinypic.com/xer2pu.png
+[img1]: http://i66.tinypic.com/3buq1.png
+[img2]: http://i67.tinypic.com/ibm8so.png
