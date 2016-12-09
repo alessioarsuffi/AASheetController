@@ -1,24 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Mu-fs-q4G">
+    <device id="retina5_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="Yn3-xh-K0U">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Mu-fs-q4G" customClass="ViewController" customModule="AASheetController_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="mhw-mP-hpN"/>
+                        <viewControllerLayoutGuide type="bottom" id="tDv-wK-FbT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="WE4-8z-8mI">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0D-Rg-6sP">
+                                <rect key="frame" x="0.0" y="370" width="736" height="44"/>
+                                <items>
+                                    <barButtonItem title="UIAlertController" id="NNZ-ZM-dJu">
+                                        <connections>
+                                            <action selector="showAppleActionSheetPressed:" destination="4Mu-fs-q4G" id="PT7-PE-Y36"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TII-Ny-L8h"/>
+                                    <barButtonItem title="AASheetController" style="plain" id="5Sj-Vu-D42">
+                                        <connections>
+                                            <action selector="showBarButtonItemPressed:" destination="4Mu-fs-q4G" id="Aef-mD-xAT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8FY-DW-yGR">
+                                <rect key="frame" x="248" y="87" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Baj-SK-bzX"/>
+                                    <constraint firstAttribute="height" constant="240" id="Dxs-0m-kv6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E0D-Rg-6sP" secondAttribute="trailing" id="AW6-d3-hRV"/>
+                            <constraint firstItem="tDv-wK-FbT" firstAttribute="top" secondItem="E0D-Rg-6sP" secondAttribute="bottom" id="KY9-Gg-a0A"/>
+                            <constraint firstItem="8FY-DW-yGR" firstAttribute="centerY" secondItem="WE4-8z-8mI" secondAttribute="centerY" id="V0h-wA-sTe"/>
+                            <constraint firstItem="8FY-DW-yGR" firstAttribute="centerX" secondItem="WE4-8z-8mI" secondAttribute="centerX" id="u0R-4M-m03"/>
+                            <constraint firstItem="E0D-Rg-6sP" firstAttribute="leading" secondItem="WE4-8z-8mI" secondAttribute="leading" id="vqe-iH-CCn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chosenImageView" destination="8FY-DW-yGR" id="iy9-s5-vI9"/>
+                        <outlet property="showActionSheetBarButtonItem" destination="NNZ-ZM-dJu" id="haR-ZV-UaG"/>
+                        <outlet property="showBarButtonItem" destination="5Sj-Vu-D42" id="dOW-kA-h7d"/>
+                        <outlet property="toolbar" destination="E0D-Rg-6sP" id="94Y-GO-rdz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ef4-iC-sjR" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

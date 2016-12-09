@@ -1,0 +1,6 @@
+framework module Pods_AASheetController_Example {
+  umbrella header "Pods-AASheetController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+PODS:
+  - AASheetController (0.1.0)
+  - Nimble (5.1.1)
+  - Quick (1.0.0)
+
+DEPENDENCIES:
+  - AASheetController (from `../`)
+  - Nimble (~> 5.0)
+  - Quick (~> 1.0)
+
+EXTERNAL SOURCES:
+  AASheetController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AASheetController: 754ef7c12e1558a96ec4582c1dad34f455a9e4b0
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+
+PODFILE CHECKSUM: 1c4e4918459b96b4c64d4997c0a77c58b477b0fc
+
+COCOAPODS: 1.1.1
