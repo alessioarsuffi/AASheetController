@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'AASheetController'
-s.version          = '0.1.1'
+s.version          = '0.1.2'
 s.summary          = 'Replace apple UIAlertController with access to device photo library'
 
 # This description is used to generate tags and improve search results.
