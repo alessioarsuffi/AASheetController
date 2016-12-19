@@ -83,8 +83,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AASheetControllerDelegate {
-    
-    func didSelect(image: UIImage) {
-        chosenImageView.image = image
-    }
+  
+  public func sheetController(didSelect image: UIImage) {
+    chosenImageView.image = image
+  }
 }

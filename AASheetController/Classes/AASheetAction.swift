@@ -32,11 +32,10 @@ public class AASheetAction: UIButton {
     
     var separator = UIImageView()
     
-    init() {
+    @objc init() {
         self.actionStyle = .cancel
         super.init(frame: CGRect.zero)
     }
-    
     
     override public var isHighlighted: Bool {
         didSet {
@@ -65,7 +64,7 @@ public class AASheetAction: UIButton {
         clipsToBounds = true
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    @objc required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -88,7 +87,8 @@ public class AASheetAction: UIButton {
 
 extension UIColor {
     
-    static var appleBlue: UIColor {
+    /// Default apple blue color
+    @objc static var appleBlue: UIColor {
         return UIColor(red: 14/255, green: 122/255, blue: 254/255, alpha: 1.0)
     }
 }

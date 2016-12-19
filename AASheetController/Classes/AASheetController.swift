@@ -9,18 +9,26 @@
 import UIKit
 import Photos
 
+/// AASheetControllerDelegate
 public protocol AASheetControllerDelegate: class {
     
-    func didSelect(image: UIImage)
+    /// This method return an UIImage when user tap sheetController's collectionView
+    ///
+    /// - Parameter image: UIImage from sheetController
+    func sheetController(didSelect image: UIImage)
 }
 
+/// AASheetController
 public class AASheetController: UIViewController {
     
     // MARK: Properties
     
-    /// This variable is the size of the image that you want back in delegate didSelect(image:) method
+    /// This is the size of the image that you want back in AASheetControllerDelegate
+    /// - note: default CGSize.zero
     public var imageSize = CGSize.zero
     
+    /// Define the collectionView cell size
+    /// - note: default CGSize(width: 100, height: 100)
     public let cellSize = CGSize(width: 100, height: 100)
     
     /// Whether a cancel button should be visible at the bottom of the actionSheet
@@ -31,6 +39,7 @@ public class AASheetController: UIViewController {
         }
     }
     
+    /// This define the delegate
     public weak var delegate: AASheetControllerDelegate?
     
     /// Whether system photoLibrary should be visible at the top of the actionSheet
@@ -43,7 +52,6 @@ public class AASheetController: UIViewController {
     
     /// Change this value to edit action view height
     public var alertStackViewHeight : CGFloat = 57
-    
     
     var separator = UIImageView()
     
@@ -97,12 +105,15 @@ public class AASheetController: UIViewController {
     
     // MARK: View lifecycle
     
+  
+    /// viewWillAppear
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateAppearing()
         shouldShowCollectionView()
     }
     
+    /// viewWillDisappear
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         animateDisappearing()
@@ -144,6 +155,9 @@ public class AASheetController: UIViewController {
     }
     
     //MARK: - Actions
+  
+    /// Add an AASheetAction to sheetController, 
+    /// - note: To change height use alertStackViewHeight
     @objc public func addAction(_ alertAction: AASheetAction) {
         alertActionStackView.addArrangedSubview(alertAction)
         
@@ -254,10 +268,12 @@ public class AASheetController: UIViewController {
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate, 
 extension AASheetController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    ///
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchResult == nil ? 0 : fetchResult.count
     }
     
+    ///
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AACollectionViewCell.identifier, for: indexPath) as! AACollectionViewCell
         
@@ -272,15 +288,17 @@ extension AASheetController: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
     }
     
+    ///
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }
     
+    ///
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let asset = fetchResult.object(at: indexPath.item)
         
         imageManager?.requestImage(for: asset, targetSize: targetSize(), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
-            self.delegate?.didSelect(image: image!)
+            self.delegate?.sheetController(didSelect: image!)
             self.dismiss(animated: true, completion: nil)
         })
     }
